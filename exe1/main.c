@@ -17,9 +17,7 @@ void btn_callback(uint gpio, uint32_t events) {
 }
 
 bool timer_0_callback(repeating_timer_t *rt) {
-    if (led_flag==1){
-        g_timer_0 =1;
-    }
+    g_timer_0 =1;
     return true;
 }
 
@@ -52,7 +50,7 @@ int main() {
             }
         }
 
-        if (g_timer_0==1) {
+        if (g_timer_0) {
             g_timer_0 = 0;
             gpio_put(LED_PIN_R, !gpio_get(LED_PIN_R));
         }
