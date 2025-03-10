@@ -7,7 +7,7 @@ const int LED_PIN_R = 4;
 
 volatile int flag_f_r = 0;
 volatile int g_timer_0 = 0;
-volatile int led_flag = 0;
+
 
 void btn_callback(uint gpio, uint32_t events) {
     if (events == 0x4) { // fall edge
@@ -36,6 +36,8 @@ int main() {
 
     int timer_0_hz = 2;
     repeating_timer_t timer_0;
+
+    bool led_flag = 0;
 
     while (true) {
         if (flag_f_r) {
