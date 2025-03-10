@@ -20,7 +20,7 @@ bool timer_0_callback(repeating_timer_t *rt) {
     if (led_flag==1){
         g_timer_0 =1;
     }
-    return led_flag;
+    return true;
 }
 
 int main() {
